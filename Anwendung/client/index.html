@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+<link rel="stylesheet" type="text/css" href="css/style3.css" media="screen" />
+<head>
+    <meta charset="UTF-8">
+    <title>horror movie text animation</title>
+
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+</head>
+<body>
+<section id="section01">
+    <div id="twitch">
+  <video autoplay muted loop class="myvideo">
+ <source src="media/videos/bg.mp4" type="video/mp4">
+</video>
+   <div>They are among us</div>
+   <div><span>Will you</span>SURVIVE ?</div>
+   <div>Stay<span>OPENED EYE</span></div>
+   <div>Friends are ENEMIES </div>
+   <div>Your family<span>will BETRAY you</span></div>
+   <div>THE RULES <span>CHANGED</span></div>
+   <div><span>DONT</span> LOOK BACK </div>
+   <div>MERCY<span>MEANS DEATH</span></div>
+
+ </div>
+</section>
+
+<section id="section03">
+
+ <div class="startButton">
+   <button class="fullWidth" type="button" onclick="launchGame()">
+     START YOUR JOURNEY
+   </button>
+</div>
+
+<div class="weiß">
+
+   <span>  ABOUT THE GAME  </span>
+
+ <a href="#section02"><image width="100px" height="60px" src="css/images/scroll.png"></image>
+ </a>
+</div>
+
+
+
+
+
+ <div class="content2" width="100%">
+ <div class="marnewcont">
+
+ <section class="content3 " id="section02">
+
+   <div class="height5zeilen">
+	<h2> Spielanleitung Werwolf </h2>
+Das Spiel beginnt in der Nacht und die Werwölfe dürfen ein Opfer bestimmen. Hierfür müssen die Werwölfe die Karte des Spielers ihrer Wahl einmal anklicken.
+Nach der Werwolfabstimmung bekommt die Hexe eben diesen Spieler angezeigt und kann sich entscheiden, ob sie den Spieler retten und einen beliebigen Spieler vergiften möchte.
+Sollte sich die Hexe entscheiden den Spieler zu retten, so reicht ein einfacher Klick auf den Heiltrank aus, will sie aber jemanden töten so muss der Gifttrank ausgesucht werden und danach der Spieler,
+welcher vergiftet werden soll. Danach gilt es den Zug mit einem Klick auf die Bestätigungstaste zu beenden. Ihr bleibt es auch offen nichts davon in einer Nacht zu machen.
+Am Tag gilt es ein Opfer zu beklagen und die Dorfbewohner fragen sich, wer die Werwölfe unter Ihnen sind.
+Um diese Frage zu beantworten findet das Dorfgericht statt, hierbei soll der Beschuldigte hingerichtet werden.
+Jeder Spieler, egal welche Rolle, hat nun das Recht einen anderen Spieler seiner Wahl zu beschuldigen ein Werwolf zu sein. Der Spieler mit den meisten Stimmen wird hingerichtet.
+Sollte bei einen dieser Abstimmungen der Jäger sterben, so darf dieser mit seinem letzten Atemzug einen Spieler seiner Wahl mit in den Tod reißen. Das Spiel ist beendet,
+wenn die Werwölfe alle Bewohner des Dorfes getötet haben oder die Dorfbewohner die Werwölfe aus dem Dorf ausgelöscht haben.
+Falls am Ende kein Spieler überleben sollte, gilt ein Unentschieden.</br>
+    </div>
+
+ </section>
+
+       <div>
+         <p id="Scrollpunkt1" class="rollenueb">ROLLENÜBERSICHT</p>
+         <p>Stöbere durch unsere liebevoll gestalteten Rollen und erkenne ihre Stärken und Schwächen</p>
+       </div>
+
+       <div>
+       <div class="mySlides" style="width:100%">
+       <table class="fullwidth">
+       <tr class="fullwidth">
+
+         <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-hight flip-card-front" id="villager">
+
+               <div class="flip-card-front-text" >
+
+                   <h1>Bewohner</h1>
+
+
+               </div>
+             </div>
+               <div class="flip-card-back">
+                   <h1>Bewohner</h1>
+
+                   <p>Stimmt am Tage beim Dorfgericht ab</p>
+               </div>
+             </div>
+         </div>
+         </td>
+
+         <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-hight flip-card-front" id="hunter">
+
+               <div class="flip-card-front-text" >
+                   <h1>Jäger</h1>
+
+
+               </div>
+             </div>
+               <div class="flip-card-back">
+                   <h1>Jäger</h1>
+                   <p>Stimmt am Tage beim Dorfgericht ab</p>
+                   <p>Fähigkeiten: </br> - Schießt nach seinem Tod auf einen anderen Spieler </p>
+               </div>
+             </div>
+         </div>
+         </td>
+
+         <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-hight flip-card-front" id="witch">
+                 <div class="flip-card-front-video">
+
+                 </div>
+               <div class="flip-card-front-text">
+                   <h1>Hexe</h1>
+
+
+               </div>
+             </div>
+               <div class="flip-card-back">
+                   <h1>Hexe</h1>
+                   <p>Stimmt am Tage beim Dorfgericht ab</p>
+                   <p>Fähigkeiten: </br> Einmalig: Heiltrank um jemanden zu retten </br>
+						Einmalig: Gifttrank um jemanden zu töten
+					</p>
+               </div>
+             </div>
+         </div>
+         </td>
+
+
+       </tr>
+       </table>
+       </div>
+
+
+
+       <div class="mySlides" style="width:100%">
+       <table>
+       <tr>
+
+         <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-hight flip-card-front">
+                 <div class="flip-card-front-video">
+
+                 </div>
+               <div class="flip-card-front-text">
+                   <h1>Comming soon</h1>
+
+
+               </div>
+             </div>
+               <div class="flip-card-back-red">
+                   <h1>Comming soon</h1>
+
+               </div>
+             </div>
+         </div>
+         </td>
+
+		  <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-front flip-card-hight" id="vilkolakis">
+
+               <div class="flip-card-front-text">
+                   <h1>WERWOLF</h1>
+
+               </div>
+             </div>
+               <div class="flip-card-back-red">
+                   <h1>Werwolf</h1>
+				   <p>Stimmt am Tage beim Dorfgericht ab</p>
+                   <p>Wählt das Opfer der Nacht</p>
+               </div>
+             </div>
+         </div>
+         </td>
+
+         <td>
+         <div class="flip-card">
+           <div class="flip-card-inner">
+             <div class="flip-card-hight flip-card-front">
+                 <div class="flip-card-front-video">
+
+                 </div>
+               <div class="flip-card-front-text">
+                    <h1>Comming soon</h1>
+
+
+               </div>
+             </div>
+               <div class="flip-card-back-red">
+                   <h1>Comming soon</h1>
+               </div>
+             </div>
+         </div>
+         </td>
+
+
+
+       </tr>
+       </table>
+       </div>
+
+ <div class="mySlides" style="width:100%">
+       <table class="fullwidth">
+       <tr class="fullwidth">
+
+
+		<td>
+
+			<h2>...Comming soon...</h2>
+		</td>
+
+
+       </tr>
+       </table>
+       </div>
+
+
+
+</div>
+
+</div>
+
+<div class="w3-center margintlr100width">
+ <div class="w3-section">
+   <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+   <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+ </div>
+ <button class="marginb w3-button demo" onclick="currentDiv(1)">1</button>
+ <button class="marginb w3-button demo" onclick="currentDiv(2)">2</button>
+ <button class="marginb w3-button demo" onclick="currentDiv(3)">3</button>
+   </div>
+
+<div class="border-t linehight">
+
+	<div class="impres impresLeft">
+		<h2 style="margin-bottom: 20px;">
+			Ein Projekt der Studiengruppe </br>
+			BA-Rhein-Main
+		</h2>
+
+		<li> Andre Hoffmann </li>
+		<li> Kevin Kunkel </li>
+		<li> Lara Martin </li>
+		<li> Pascal Berger </li>
+		<li> Sven Mludek </li>
+	</div>
+
+	<div class="impres impresMiddle">
+
+	</div>
+
+	<div class="impresRight">
+		<h2 style="margin-bottom: 20px;">
+			Ein großes Dankeschön an <br>
+			alle Mitwirkenden
+		</h2>
+
+
+		<li> Alina Gepfner </li>
+		<li> Niko Brück </li>
+		<li> Lennart Kari Anton Thomaßen </li>
+		<li> Lena Maria Schneider </li>
+		<li> Maximillian Schelding </li>
+		<li> Elena Illing </li>
+		<li> Lea Therese Meyer-Almes </li>
+
+
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+         <script>
+         var slideIndex = 1;
+         showDivs(slideIndex);
+
+         function plusDivs(n) {
+           showDivs(slideIndex += n);
+         }
+
+         function currentDiv(n) {
+           showDivs(slideIndex = n);
+
+         }
+
+         function showDivs(n) {
+           var i;
+           var x = document.getElementsByClassName("mySlides");
+           var dots = document.getElementsByClassName("demo");
+           if (n > x.length) {slideIndex = 1}
+           if (n < 1) {slideIndex = x.length}
+           for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+
+           }
+           for (i = 0; i < dots.length; i++) {
+           dots[i].className = dots[i].className.replace(" w3-red", "");
+
+           }
+           x[slideIndex-1].style.display = "block";
+
+           dots[slideIndex-1].className += " w3-red";
+         }
+         function launchGame(){
+           window.location='login.html';
+         }
+         </script>
+         </div>
+
+
+
+</div>
+</section>
+
+
+</body>
+</html>

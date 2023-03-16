@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<link rel="stylesheet" type="text/css" href="css/styleLogin.css" media="screen" />
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="js/login.js"></script>
+
+<head>
+</head>
+
+<body onload="onload()">
+	<div class="bg">
+		<div class=" center">
+			<div id="signDiv" class="loginFeld">
+				<div class="feldName"> USERNAME </div>
+				<input class="eingabeFeld" id="signDiv-username" type="text" maxlength="8"></input><br>
+				<div class="feldName"> PASSWORT </div>
+				<input class="eingabeFeld" id="signDiv-password" type="password"></input><br>
+
+				<button class="buttons higherButton" id="signDiv-signIn">Login</button>
+				<button class="buttons" id="signDiv-signUp">Registrieren</button>
+				<div style="color: white; font-size: 26px"><br>
+					<input type="checkbox" style="transform: scale(2); position: relative; left: -25px; top: 12px;" id="datenschutzZustimmung" onclick="showHideButton(this)">Ich stimme der Erhebung von<button
+						style="text-decoration:underline; font-size: 1em; color: white; background:transparent; border:none; outline: none;" id="show-modal-dialog">personenbezogene Daten</button> zu.
+				</div>
+			</div>
+		</div>
+	</div>
+	<aside class="aside">
+		<dialog id="dialog" class="dialogfeld">
+			<form>
+				<h1><strong><big>Datenschutzerklärung</big></strong><input type="button" class="cancel" id="close-dialog" value="X"><br><br></h1>
+
+				<h2><strong>Allgemeiner Hinweis und Pflichtinformationen</strong></h2>
+				<p><strong>Ablehnung der Erhebung</strong></p>
+				<p>Falls Sie mit der Erhebung Ihrer personenbezogene Daten nicht einverstanden sind, können wir Ihnen unsere Dienste (die Nutzung der Webseite) nicht zur Verfügung stellen.</p>
+				<p><strong>Benennung der verantwortlichen Stelle</strong></p>
+				<p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+				<p><span id="s3-t-firma">Musterfirma GmbH</span><br><span id="s3-t-ansprechpartner">Max Mustermann</span><br><span id="s3-t-strasse">Musterweg 12</span><br><span id="s3-t-plz">12345</span> <span id="s3-t-ort">Musterort</span></p>
+				<p></p>
+				<p>Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.).</p>
+
+				<p><strong>Widerruf Ihrer Einwilligung zur Datenverarbeitung</strong></p>
+				<p>Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist 
+					jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die
+					Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+
+				<p><strong>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</strong></p>
+				<p>Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen ist der
+					Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: <a
+						href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html" target="_blank">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p>
+
+				<p><strong>Recht auf Datenübertragbarkeit</strong></p>
+				<p>Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt in einem maschinenlesbaren
+					Format. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+
+				<p><strong>Recht auf Auskunft, Berichtigung, Sperrung, Löschung</strong></p>
+				<p>Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf.
+					ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.</p>
+
+				<p><strong>SSL- bzw. TLS-Verschlüsselung</strong></p>
+				<p>Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über diese Website übermitteln, für
+					Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile.</p>
+
+				<p><strong>Server-Log-Dateien</strong></p>
+				<p>In Server-Log-Dateien erhebt und speichert der Provider der Website automatisch Informationen, die Ihr Browser automatisch an uns übermittelt. Dies sind:</p>
+				<ul>
+					<li>Besuchte Seite auf unserer Domain</li>
+					<li>Datum und Uhrzeit der Serveranfrage</li>
+					<li>Browsertyp und Browserversion</li>
+					<li>Verwendetes Betriebssystem</li>
+					<li>Referrer URL</li>
+					<li>Hostname des zugreifenden Rechners</li>
+					<li>IP-Adresse</li>
+				</ul>
+				<p>Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen
+					gestattet.</p>
+
+				<p><strong>Registrierung auf dieser Website</strong></p>
+				<p>Zur Nutzung bestimmter Funktionen können Sie sich auf unserer Website registrieren. Die übermittelten Daten dienen ausschließlich zum Zwecke der Nutzung des jeweiligen Angebotes oder Dienstes. Bei der Registrierung abgefragte
+					Pflichtangaben sind vollständig anzugeben. Andernfalls werden wir die Registrierung ablehnen.</p>
+				<p>Im Falle wichtiger Änderungen, etwa aus technischen Gründen, informieren wir Sie per E-Mail. Die E-Mail wird an die Adresse versendet, die bei der Registrierung angegeben wurde.</p>
+				<p>Die Verarbeitung der bei der Registrierung eingegebenen Daten erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine
+					formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+				<p>Wir speichern die bei der Registrierung erfassten Daten während des Zeitraums, den Sie auf unserer Website registriert sind. Ihren Daten werden gelöscht, sollten Sie Ihre Registrierung aufheben. Gesetzliche Aufbewahrungsfristen bleiben
+					unberührt.</p>
+
+				<p><strong>Speicherdauer von Beiträgen und Kommentaren</strong></p>
+				<p>Beiträge und Kommentare sowie damit in Verbindung stehende Daten, wie beispielsweise IP-Adressen, werden gespeichert. Der Inhalt verbleibt auf unserer Website, bis er vollständig gelöscht wurde oder aus rechtlichen Gründen gelöscht werden
+					musste.</p>
+				<p>Die Speicherung der Beiträge und Kommentare erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung
+					per E-Mail. Die
+					Rechtmäßigkeit bereits erfolgter Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt.</p>
+
+				<p><strong>Rechte der betroffenen Personen</strong></p>
+				<p>Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob betreffende Daten verarbeitet werden und auf Auskunft über diese Daten sowie auf weitere 
+					Informationen und Kopie der Daten entsprechend den gesetzlichen Vorgaben.<br><br>
+					Sie haben entsprechend. den gesetzlichen Vorgaben das Recht, die Vervollständigung der Sie betreffenden Daten oder die Berichtigung der Sie betreffenden unrichtigen Daten zu verlangen.<br><br>
+					Sie haben nach Maßgabe der gesetzlichen Vorgaben das Recht zu verlangen, dass betreffende Daten unverzüglich gelöscht werden, bzw. alternativ nach Maßgabe der gesetzlichen Vorgaben eine Einschränkung der Verarbeitung der Daten zu verlangen.<br><br>
+					Sie haben das Recht zu verlangen, dass die Sie betreffenden Daten, die Sie uns bereitgestellt haben nach Maßgabe der gesetzlichen Vorgaben zu erhalten und deren Übermittlung an andere Verantwortliche zu fordern. <br><br>
+					Sie haben ferner nach Maßgabe der gesetzlichen Vorgaben das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen.<br>
+				</p>
+
+				<p><strong>Cookies und Widerspruchsrecht bei Direktwerbung</strong></p><p>Als „Cookies“ werden kleine Dateien bezeichnet, die auf Rechnern der Nutzer 
+					gespeichert werden. Innerhalb der Cookies können unterschiedliche Angaben gespeichert werden. Ein Cookie dient primär dazu, die Angaben zu einem Nutzer (bzw. dem Gerät auf dem das Cookie gespeichert ist) während oder auch nach seinem Besuch innerhalb eines Onlineangebotes zu speichern. Als temporäre Cookies, bzw. „Session-Cookies“ oder „transiente Cookies“, werden Cookies bezeichnet, die gelöscht werden, nachdem ein Nutzer ein Onlineangebot verlässt und seinen Browser schließt. In einem solchen Cookie kann z.B. der Inhalt eines Warenkorbs in einem Onlineshop oder ein Login-Status gespeichert werden. Als „permanent“ oder „persistent“ werden Cookies bezeichnet, die auch nach dem Schließen des Browsers gespeichert bleiben. So kann z.B. der Login-Status gespeichert werden, wenn die Nutzer diese nach mehreren Tagen aufsuchen. Ebenso können in einem solchen Cookie die Interessen der Nutzer gespeichert werden, die für Reichweitenmessung oder Marketingzwecke verwendet werden. Als „Third-Party-Cookie“ werden Cookies bezeichnet, die von anderen Anbietern als dem Verantwortlichen, der das Onlineangebot betreibt, angeboten werden (andernfalls, wenn es nur dessen Cookies sind spricht man von „First-Party Cookies“).<br><br>
+					Wir können temporäre und permanente Cookies einsetzen und klären hierüber im Rahmen unserer Datenschutzerklärung auf.<br><br>
+					Sofern wir die Nutzer um eine Einwilligung in den Einsatz von Cookies bitten (z.B. im Rahmen einer Cookie-Einwilligung), ist die Rechtsgrundlage dieser Verarbeitung Art. 6 Abs. 1 lit. a. DSGVO. Ansonsten werden die personenbezogenen Cookies der Nutzer entsprechend den nachfolgenden Erläuterungen im Rahmen dieser Datenschutzerklärung auf Grundlage unserer berechtigten Interessen (d.h. Interesse an der Analyse, Optimierung und wirtschaftlichem Betrieb unseres Onlineangebotes im Sinne des Art. 6 Abs. 1 lit. f. DSGVO) oder sofern der Einsatz von Cookies zur Erbringung unserer vertragsbezogenen Leistungen erforderlich ist, gem. Art. 6 Abs. 1 lit. b. DSGVO, bzw. sofern der Einsatz von Cookies für die Wahrnehmung einer Aufgabe, die im öffentlichen Interesse liegt erforderlich ist oder in Ausübung öffentlicher Gewalt erfolgt, gem. Art. 6 Abs. 1 lit. e. DSGVO, verarbeitet.<br><br>
+					Falls die Nutzer nicht möchten, dass Cookies auf ihrem Rechner gespeichert werden, werden sie gebeten die entsprechende Option in den Systemeinstellungen ihres Browsers zu deaktivieren. Gespeicherte Cookies können in den Systemeinstellungen des Browsers gelöscht werden. Der Ausschluss von Cookies kann zu Funktionseinschränkungen dieses Onlineangebotes führen.<br><br>
+					Ein genereller Widerspruch gegen den Einsatz der zu Zwecken des Onlinemarketing eingesetzten Cookies kann bei einer Vielzahl der Dienste, vor allem im Fall des Trackings, über die US-amerikanische Seite <a href="http://www.aboutads.info/choices/">http://www.aboutads.info/choices/</a> oder die EU-Seite <a href="http://www.youronlinechoices.com/">http://www.youronlinechoices.com/</a> erklärt werden. Des Weiteren kann die Speicherung von Cookies mittels deren Abschaltung in den Einstellungen des Browsers erreicht werden. Bitte beachten Sie, dass dann gegebenenfalls nicht alle Funktionen dieses Onlineangebotes genutzt werden können.
+				</p>
+
+				<p><strong>Google AdWords und Google Conversion-Tracking</strong></p>
+				<p>Unsere Website verwendet Google AdWords. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.</p>
+				<p>AdWords ist ein Online-Werbeprogramm. Im Rahmen des Online-Werbeprogramms arbeiten wir mit Conversion-Tracking. Nach einem Klick auf eine von Google geschaltete Anzeige wird ein Cookie für das Conversion-Tracking gesetzt. Cookies sind
+					kleine Textdateien,
+					die Ihr Webbrowser auf Ihrem Endgerät speichert. Google AdWords Cookies verlieren nach 30 Tagen ihre Gültigkeit und dienen nicht der persönlichen Identifizierung der Nutzer. Am Cookie können Google und wir erkennen, dass Sie auf eine
+					Anzeige geklickt
+					haben und zu unserer Website weitergeleitet wurden.</p>
+				<p>Jeder Google AdWords-Kunde erhält ein anderes Cookie. Die Cookies sind nicht über Websites von AdWords-Kunden nachverfolgbar. Mit Conversion-Cookies werden Conversion-Statistiken für AdWords-Kunden, die Conversion-Tracking einsetzen,
+					erstellt. Adwords-Kunden
+					erfahren wie viele Nutzer auf ihre Anzeige geklickt haben und auf Seiten mit Conversion-Tracking-Tag weitergeleitet wurden. AdWords-Kunden erhalten jedoch keine Informationen, die eine persönliche Identifikation der Nutzer ermöglichen. Wenn
+					Sie nicht
+					am Tracking teilnehmen möchten, können Sie einer Nutzung widersprechen. Hier ist das Conversion-Cookie in den Nutzereinstellungen des Browsers zu deaktivieren. So findet auch keine Aufnahme in die Conversion-Tracking Statistiken statt.</p>
+				<p>Die Speicherung von “Conversion-Cookies” erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir als Websitebetreiber haben ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um unser Webangebot und unsere Werbung zu
+					optimieren.</p>
+				<p>Einzelheiten zu Google AdWords und Google Conversion-Tracking finden Sie in den Datenschutzbestimmungen von Google: <a href="https://www.google.de/policies/privacy/">https://www.google.de/policies/privacy/</a>.</p>
+				<p>Mit einem modernen Webbrowser können Sie das Setzen von Cookies überwachen, einschränken oder unterbinden. Die Deaktivierung von Cookies kann eine eingeschränkte Funktionalität unserer Website zur Folge haben.</p>
+
+				<p><strong>Google Web Fonts</strong></p>
+				<p>Unsere Website verwendet Web Fonts von Google. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
+				<p>Durch den Einsatz dieser Web Fonts wird es möglich Ihnen die von uns gewünschte Darstellung unserer Website zu präsentieren, unabhängig davon welche Schriften Ihnen lokal zur Verfügung stehen. Dies erfolgt über den Abruf der Google Web
+					Fonts von einem Server von Google in den USA und der damit verbundenen Weitergabe Ihre Daten an Google. Dabei handelt es sich um Ihre IP-Adresse und welche Seite Sie bei uns besucht haben. Der Einsatz von Google Web Fonts erfolgt auf
+					Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website haben wir ein berechtigtes Interesse an der optimalen Darstellung und Übertragung unseres Webauftritts.</p>
+				<p>Das Unternehmen Google ist für das us-europäische Datenschutzübereinkommen "Privacy Shield" zertifiziert. Dieses Datenschutzübereinkommen soll die Einhaltung des in der EU geltenden Datenschutzniveaus gewährleisten.</p>
+				<p>Einzelheiten über Google Web Fonts finden Sie unter: <a href="https://www.google.com/fonts#AboutPlace:about">https://www.google.com/fonts#AboutPlace:about</a> und weitere Informationen in den Datenschutzbestimmungen von Google: <a
+						href="https://policies.google.com/privacy/partners?hl=de">https://policies.google.com/privacy/partners?hl=de</a></p>
+			</form>
+		</dialog>
+	</aside>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<link rel="stylesheet" type="text/css" href="css/styleingame.css" media="screen" />
+
+<head>
+	<meta charset="UTF-8">
+	<title>horror movie text animation</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+
+
+
+</head>
+
+<body background="css/images/Tag.jpg" id='body' width="100%" height="100%" onload="loadPlayer()" class='day' night='false'>
+	<div id="div2">
+		<div id="rolepic"> </div>
+	</div>
+
+	<div class="navbar">
+		<div id="navbar"></div>
+		<div class="dropdown">
+			<button class="dropbtn">Chat Options
+
+			</button>
+			<div class="abs">
+				<div class="dropdown-content">
+
+					<button class="sizing" id="bigger"> Chat größer</button>
+					<button class="sizing" id="smaller">Chat kleiner</button>
+					<button class="sizing" id="chatOff"> Chat aus</button>
+
+
+
+				</div>
+			</div>
+		</div>
+		<div class="spaceNav"> </div>
+	</div>
+
+	<div class="z1">
+
+
+		<div class="fullabs">
+
+
+
+			<div class="leftjs" id="LeftCol">
+
+
+				<div id="up2" class="up">
+					<div id="upLeft" style="display: none">
+						<div class="roleCard picrole">
+							<div id="0"> </div>
+						</div>
+					</div>
+
+					<div id="upRight" style="display: none">
+						<div class="roleCard picrole">
+							<div id="1"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div id="down2" class="down">
+					<div id="downLeft" style="display: none">
+						<div class="roleCard picrole">
+							<div id="2"> </div>
+						</div>
+					</div>
+
+					<div id="downRight" style="display: none">
+						<div class="roleCard picrole">
+							<div id="3"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div id="left2" class="left1">
+					<div id="leftUp" style="display: none">
+						<div class="roleCard picrole">
+							<div id="4"> </div>
+						</div>
+					</div>
+
+					<div id="leftDown" style="display: none">
+						<div class="roleCard picrole">
+							<div id="5"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div id="right2" class="right1">
+					<div id="rightUp" style="display: none">
+						<div class="roleCard picrole">
+							<div id="6"> </div>
+						</div>
+					</div>
+
+					<div id="rightDown" style="display: none">
+						<div class="roleCard picrole">
+							<div id="7"> </div>
+						</div>
+					</div>
+				</div>
+
+				<button id="startGame" disabled onclick="enterGame()">
+
+
+
+				</button>
+
+
+
+
+
+			</div>
+			<div id="right" class="right">
+				<div id="RightCol">
+
+					<h3> Im a fkn Chatbox </h3>
+					<div id="chat-text" class="chatText" style="height:100%;overflow-y:scroll">
+						<div>Willkommen!</div>
+					</div>
+
+					<form id="chat-form">
+						<input id="chat-input" type="text" style="width:100%"></input>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="lower">
+
+
+		<div class="rightlower">
+			<div class="rolepicbox">
+
+
+				<div class="btns">
+					<div class="inline" id="inline"> </div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="woodsign">
+			<image src="css/images/wood.png" class="woodSignImage"> </image>
+
+
+
+		</div>
+	</div>
+	</div>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+	<script src="js/game.js" charset="UTF-8"></script>
+	<script>
+		document.getElementById("bigger").addEventListener("click", function() {
+			document.getElementById("right").style.width = "25%";
+			document.getElementById("LeftCol").style.width = "75%";
+			document.getElementById("startGame").style.left = "47%";
+
+			document.getElementById("left2").style.left = "18%";
+			document.getElementById("right2").style.right = "13%";
+			document.getElementById("right").style.right = "0%";
+			document.getElementById("up2").style.left = "35%";
+			document.getElementById("down2").style.left = "35%";
+			document.getElementById("fire").style.left = "46%";
+		});
+
+		document.getElementById("smaller").addEventListener("click", function() {
+			document.getElementById("right").style.width = "15%";
+			document.getElementById("right").style.right = "0%";
+			document.getElementById("LeftCol").style.width = "85%";
+			document.getElementById("startGame").style.left = "47.5%";
+
+			document.getElementById("left2").style.left = "18%";
+			document.getElementById("right2").style.right = "13%";
+			document.getElementById("up2").style.left = "35%";
+			document.getElementById("down2").style.left = "35%";
+			document.getElementById("fire").style.left = "46%";
+
+		});
+
+		document.getElementById("chatOff").addEventListener("click", function() {
+			document.getElementById("right").style.width = "0px";
+			document.getElementById("right").style.right = "0%";
+			document.getElementById("LeftCol").style.width = "100%";
+			document.getElementById("startGame").style.left = "43.5%";
+
+			document.getElementById("left2").style.left = "13%";
+			document.getElementById("right2").style.right = "18%";
+			document.getElementById("right").style.right = "0%";
+			document.getElementById("up2").style.left = "30%";
+			document.getElementById("down2").style.left = "30%";
+			document.getElementById("fire").style.left = "41%";
+
+		});
+		document.onkeydown = function() {
+			switch (event.keyCode) {
+				case 116: //F5 button
+
+					event.returnValue = false;
+					event.keyCode = 0;
+					return false;
+				case 82: //R button
+
+					if (event.ctrlKey) {
+						event.returnValue = false;
+						event.keyCode = 0;
+						return false;
+					}
+			}
+		}
+
+		function show(id) {
+			document.getElementById(id).style.visibility = "visible";
+		}
+
+		function hide(id) {
+			document.getElementById(id).style.visibility = "hidden";
+		}
+	</script>
+
+</body>
+
+</html>

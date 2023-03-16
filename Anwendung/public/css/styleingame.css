@@ -1,0 +1,562 @@
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  background-size: cover;
+  background-attachment: left;
+  margin: 0px;
+  background-repeat: no-repeat;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+}
+
+.night .Vilkolakis {
+  box-shadow: 0px 0px 20px 20px #00f;
+}
+
+.above {
+  position: absolute;
+  height: 5%;
+  width: 100%;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0px;
+}
+
+.z1 {}
+
+#parent {
+  display: inline;
+  border: 1px solid #000;
+  height: 75vh;
+  width: 100%;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.leftjs {
+  color: white;
+}
+
+#LeftCol {
+  position: absolute;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+#left2, #right2 {
+  height: 68%;
+}
+
+.adapt {
+  width: 100%;
+  height: 100%;
+}
+
+#RightCol {
+  overflow: visible;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-right: 0px;
+  display: inline-block;
+  right: 0px;
+  float: left;
+}
+
+.chatText {
+  color: white;
+  width: 100%;
+}
+
+.roleCard {
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  background-image: url(images/Card.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.picrole {
+  width: 185px;
+  height: 280px;
+}
+
+.inline {
+  display: inline;
+  position: absolute;
+}
+
+#lower {
+  width: 100%;
+  top: 81%;
+  position: absolute;
+  height: 100%;
+}
+
+.fullabs {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  display: inline;
+}
+
+.up {
+  top: 20px;
+  height: 30%;
+  width: 35%;
+  position: absolute;
+  left: 35%;
+}
+
+#upLeft {
+  width: 40%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+}
+
+#upRight {
+  width: 40%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  display: inline-block;
+}
+
+.down {
+  bottom: 5%;
+  height: 30%;
+  width: 35%;
+  position: absolute;
+  left: 35%;
+}
+
+#downLeft {
+  width: 40%;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  display: inline-block;
+}
+
+#downRight {
+  width: 40%;
+  height: 100%;
+  right: 0;
+  position: absolute;
+  display: inline-block;
+}
+
+.left1 {
+  left: 0px;
+  height: 64%;
+  width: 15%;
+  position: absolute;
+  bottom: 22%;
+  left: 22%;
+}
+
+#leftUp {
+  width: 100%;
+  height: 49%;
+  top: 0px;
+  position: absolute;
+  display: inline-block;
+}
+
+#leftDown {
+  width: 100%;
+  height: 45%;
+  bottom: 0px;
+  position: absolute;
+  display: inline-block;
+}
+
+.right1 {
+  right: 0px;
+  height: 64%;
+  width: 15%;
+  position: absolute;
+  bottom: 22%;
+  right: 17%;
+}
+
+#rightUp {
+  width: 100%;
+  height: 49%;
+  top: 0px;
+  position: absolute;
+  display: inline-block;
+}
+
+#rightDown {
+  width: 100%;
+  height: 45%;
+  bottom: 0px;
+  position: absolute;
+  display: inline-block;
+}
+
+#startGame {
+  position: absolute;
+  left: calc(52.5% - 175px);
+  top: 32%;
+  background-image: url(images/startButton4.png);
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  width: 250px;
+  height: 250px;
+  border: none;
+  z-index: 5;
+}
+
+#startGame:hover {
+  border: 3px solid grey;
+  border-radius: 300px;
+  padding: 25px;
+}
+
+.notAlive {
+  color: red;
+}
+
+#rolePicture {
+  position: absolute;
+  width: 450px;
+  height: 610px;
+  background-size: cover;
+  z-index: 10;
+  border: 0;
+}
+
+#div2 {
+  position: absolute;
+  left: 0;
+  width: 450px;
+  height: 600px;
+  bottom: 7%;
+  z-index: 9;
+  background: none;
+  background-size: 100% 100%;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.right {
+  position: absolute;
+  right: 0%;
+  display: inline-block;
+  max-width: 25%;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+.rolepic {
+  margin: 25px;
+  padding: 0px;
+  width: 110px;
+  height: 110px;
+  z-index: 2;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.disabled {
+  filter: grayscale(100%);
+}
+
+#navbar {
+  color: white;
+  display: inline-block;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar a {
+  float: left;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.spaceNav {
+  width: 20px;
+  right: 0px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  z-index: 3;
+  right: 5%;
+}
+
+.abs {
+  position: absolute;
+  z-index: 3;
+}
+
+.sizing {
+  width: 97%;
+  margin: 2px;
+  overflow: visible;
+  background-color: white;
+  height: 12px;
+  -moz-box-shadow: 0px 1px 8px 1px #4c5755;
+  -webkit-box-shadow: 0px 1px 8px 1px #4c5755;
+  box-shadow: 0px 1px 8px 1px #4c5755;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8a9491', endColorstr='#6c7c7c', GradientType=0);
+  background-color: rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #566963;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+  padding: 12px 23px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px #2a423e;
+  padding: auto;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+}
+
+.sizing:hover {
+  background: red;
+}
+
+.dropdown .dropbtn {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 20px;
+  background-color: inherit;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-right: 30px;
+  z-index: 3;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown {
+  float: right;
+  right: 5%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  min-width: 130px;
+  z-index: 1;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.rolepicbox {
+  height: 160px;
+  position: absolute;
+  margin-left: 22%;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#rolepic {
+  position: absolute;
+  width: 450px;
+  height: 610px;
+  background-size: cover;
+  z-index: 10;
+}
+
+.woodsign {
+  margin-left: 10%;
+  height: 180px;
+  width: 95%;
+}
+
+.woodSignImage {
+  width: 95%;
+  height: 180px;
+}
+
+.img {
+  width: 1200px;
+  height: 150px;
+}
+
+.killedByVilkolakis {
+  color: red;
+  border: 2px solid red;
+  -webkit-animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0.0
+}
+
+.setID {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 55px;
+  font-family: noscary;
+  text-shadow: 0 0 4px #000000, 0 0 6px #000000, 0 0 6px #2aff00;
+  padding-bottom: 110px;
+  padding-top: 110px;
+}
+
+.active:hover {
+  border: 2px solid red;
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+
+  50% {
+    opacity: 1.0;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0.0;
+  }
+}
+
+.witchButton {
+  position: absolute;
+  left: 30%;
+  padding: 25px;
+}
+
+.btns {
+  width: 35%;
+  height: 100%;
+  left: 15%;
+  position: absolute;
+}
+
+#poison, #heal, #ok {
+  margin: 25px;
+  padding: 0px;
+  width: 110px;
+  height: 110px;
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+}
+
+#poison {
+  margin-left: 50px;
+  color: white;
+  background-image: url("images/Poison.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 2px solid grey;
+  border-radius: 100px;
+}
+
+#poison.active:hover {
+  border: 2px solid red;
+  border-radius: 100px;
+}
+
+#heal {
+  margin-left: 250px;
+  color: white;
+  background-image: url("images/HealPotion.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 2px solid grey;
+  border-radius: 100px;
+}
+
+#heal.active:hover {
+  border: 2px solid lime;
+  border-radius: 100px;
+}
+
+#ok {
+  margin-left: 450px;
+  color: white;
+  background-image: url("images/haken.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: 2px solid grey;
+  border-radius: 100px;
+}
+
+#ok.active:hover {
+  border: 2px solid white;
+  border-radius: 100px;
+}
