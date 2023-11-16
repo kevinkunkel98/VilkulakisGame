@@ -20,6 +20,12 @@ Vilkolakis is a multiplayer online card game that puts a digital twist on the cl
 -   **Werewolf:** Work in secrecy with fellow werewolves to eliminate villagers without getting caught.
 
 
+![Alt text](/public/css/images/readme1.png)
+
+![Alt text](/public/css/images/readme1.png)
+
+
+
 
 ## Getting Started
 
