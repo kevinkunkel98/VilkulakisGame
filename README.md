@@ -22,7 +22,7 @@ Vilkolakis is a multiplayer online card game that puts a digital twist on the cl
 
 ![Alt text](/public/css/images/readme1.png)
 
-![Alt text](/public/css/images/readme1.png)
+![Alt text](/public/css/images/readme2.png)
 
 
 
