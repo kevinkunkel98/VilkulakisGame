@@ -1,5 +1,7 @@
 var mongojs = require("mongojs")
-var db = mongojs('localhost:27017/myGame', ['account']);
+// Use environment variable for MongoDB connection, fallback to localhost for local development
+var mongoUri = process.env.MONGODB_URI || 'localhost:27017/myGame';
+var db = mongojs(mongoUri, ['account']);
 
 var express = require('express');
 var app = express();

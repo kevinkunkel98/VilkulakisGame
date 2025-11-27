@@ -1,0 +1,27 @@
+{
+  "name": "vilkolakis-game",
+  "version": "1.0.0",
+  "description": "A multiplayer online werewolf card game with real-time gameplay",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [
+    "werewolf",
+    "game",
+    "multiplayer",
+    "websockets",
+    "socketio"
+  ],
+  "author": "BA-Rhein-Main Study Group",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongojs": "^3.1.0",
+    "socket.io": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

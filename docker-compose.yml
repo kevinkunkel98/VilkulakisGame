@@ -1,0 +1,39 @@
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: vilkolakis-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=myGame
+    networks:
+      - vilkolakis-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: vilkolakis-app
+    ports:
+      - "2000:2000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/myGame
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - vilkolakis-network
+    restart: unless-stopped
+
+networks:
+  vilkolakis-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
